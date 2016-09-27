@@ -1,0 +1,5 @@
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.DAL.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.DAL.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.csprojResolveAssemblyReference.cache
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.pdb

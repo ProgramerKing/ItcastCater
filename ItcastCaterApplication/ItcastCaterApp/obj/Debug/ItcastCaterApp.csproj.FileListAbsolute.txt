@@ -1,0 +1,8 @@
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.exe.config
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.exe
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.csprojResolveAssemblyReference.cache
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.Properties.Resources.resources
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.csproj.GenerateResource.Cache
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.exe
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.pdb
