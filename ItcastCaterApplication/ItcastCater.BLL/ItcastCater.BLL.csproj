@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ItcastCater.DAL\ItcastCater.DAL.csproj">
+      <Project>{1dc27afd-cd7c-48b6-a39e-aa38d7eb8f47}</Project>
+      <Name>ItcastCater.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ItcastCater.Models\ItcastCater.Models.csproj">
+      <Project>{847d17ab-7827-49dd-a2b0-2cbeeb6729f7}</Project>
+      <Name>ItcastCater.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

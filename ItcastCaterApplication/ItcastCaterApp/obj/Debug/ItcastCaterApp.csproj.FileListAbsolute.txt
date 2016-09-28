@@ -1,7 +1,15 @@
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.exe.config
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.exe
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCaterApp.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.BLL.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.Models.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\MyControl.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.DAL.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.BLL.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.Models.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\bin\Debug\ItcastCater.DAL.pdb
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.csprojResolveAssemblyReference.cache
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.frmLogin.resources
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.Properties.Resources.resources
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.csproj.GenerateResource.Cache
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCaterApp\obj\Debug\ItcastCaterApp.exe

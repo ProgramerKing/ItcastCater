@@ -1,5 +1,4 @@
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.Models\bin\Debug\ItcastCater.Models.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.Models\bin\Debug\ItcastCater.Models.pdb
-S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.Models\obj\Debug\ItcastCater.Models.csprojResolveAssemblyReference.cache
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.Models\obj\Debug\ItcastCater.Models.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.Models\obj\Debug\ItcastCater.Models.pdb

@@ -1,5 +1,9 @@
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.BLL.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.BLL.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.DAL.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.Models.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.DAL.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\bin\Debug\ItcastCater.Models.pdb
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\obj\Debug\ItcastCater.BLL.csprojResolveAssemblyReference.cache
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\obj\Debug\ItcastCater.BLL.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.BLL\obj\Debug\ItcastCater.BLL.pdb

@@ -1,5 +1,12 @@
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.DAL.dll.config
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.DAL.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.DAL.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\EntityFramework.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\EntityFramework.SqlServer.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.Models.dll
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\ItcastCater.Models.pdb
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\EntityFramework.xml
+S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\bin\Debug\EntityFramework.SqlServer.xml
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.csprojResolveAssemblyReference.cache
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.dll
 S:\GitHub\ItcastCater\ItcastCaterApplication\ItcastCater.DAL\obj\Debug\ItcastCater.DAL.pdb
