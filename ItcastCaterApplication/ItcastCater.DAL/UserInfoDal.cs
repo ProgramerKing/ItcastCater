@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ItcastCater.Models;
 using System.Data;
 using System.Data.SqlClient;
+using ItcastCater.Models;
 
 namespace ItcastCater.DAL
 {
@@ -60,7 +56,7 @@ namespace ItcastCater.DAL
 
             #region 写法二
             DataTable dt = SqlHelper.ExecuteTable(sql, CommandType.Text, new SqlParameter("@LoginUserName", SqlDbType.VarChar, 32) { Value = LoginUserName });
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -87,7 +83,7 @@ namespace ItcastCater.DAL
             user.DelFlag = Convert.ToInt32(dr["DelFlag"]);
 
             return user;
-        } 
+        }
         #endregion
         #endregion
     }

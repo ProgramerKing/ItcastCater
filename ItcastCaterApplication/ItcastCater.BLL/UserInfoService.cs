@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ItcastCater.DAL;
+﻿using ItcastCater.DAL;
 using ItcastCater.Models;
 
 namespace ItcastCater.BLL

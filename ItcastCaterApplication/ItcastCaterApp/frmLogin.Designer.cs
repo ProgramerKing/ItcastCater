@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ItcastCaterApp.Properties.Resources.登录背景;
+            this.BackgroundImage = Properties.Resources.登录背景;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(432, 265);
             this.Controls.Add(this.msgDiv1);

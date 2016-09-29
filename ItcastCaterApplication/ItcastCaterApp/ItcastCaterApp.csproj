@@ -64,10 +64,22 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMemmberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMemmberInfo.designer.cs">
+      <DependentUpon>FrmMemmberInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMemmberInfo.resx">
+      <DependentUpon>FrmMemmberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +106,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frmTitle.ico" />
+    <None Include="Image\空白.BMP" />
+    <None Include="Image\系统设置.BMP" />
+    <None Include="Image\商品管理.BMP" />
+    <None Include="Image\会员管理.BMP" />
+    <None Include="Image\宾客结账.BMP" />
+    <None Include="Image\增加消费.BMP" />
+    <None Include="Image\顾客开单.BMP" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\登录背景.png" />
