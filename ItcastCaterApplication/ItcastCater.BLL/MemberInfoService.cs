@@ -31,5 +31,17 @@ namespace ItcastCater.BLL
             return memDal.DeleteMemberInfoByMemberID(memberID) > 0;
         }
         #endregion
+
+        #region 根据ID查询对象
+        /// <summary>
+        /// 根据ID查询对象
+        /// </summary>
+        /// <param name="memberID">会员ID</param>
+        /// <returns>对象</returns>
+        public MemberInfo GetMemberInfoByMemberID(int memberID)
+        {
+            return memDal.GetMemberInfoByMemberID(memberID);
+        }
+        #endregion
     }
 }

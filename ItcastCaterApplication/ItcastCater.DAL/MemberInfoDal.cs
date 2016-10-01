@@ -8,6 +8,25 @@ namespace ItcastCater.DAL
 {
     public class MemberInfoDal
     {
+        #region 根据ID查询对象
+        /// <summary>
+        /// 根据ID查询对象
+        /// </summary>
+        /// <param name="memberID">会员ID</param>
+        /// <returns>对象</returns>
+        public MemberInfo GetMemberInfoByMemberID(int memberID)
+        {
+            string sql = "SELECT * FROM MemberInfo WHERE DelFlag=0";
+            DataTable dt = SqlHelper.ExecuteTable(sql, CommandType.Text);
+            MemberInfo mem = null;
+            if (dt.Rows.Count > 0)
+            {
+                mem = RowToMemberInfo(dt.Rows[0]);
+            }
+            return mem;
+        } 
+        #endregion
+
         #region 根据删除标识获取会用列表
         /// <summary>
         /// 根据删除标识获取会用列表
@@ -60,7 +79,7 @@ namespace ItcastCater.DAL
         /// <returns>受影响的行数</returns>
         public int DeleteMemberInfoByMemberID(int memberID)
         {
-            string sql = "UPDATE MemberInfo DelFlag=1 WHERE MemberID=@MemberID";
+            string sql = "UPDATE MemberInfo SET DelFlag=1 WHERE MemberID=@MemberID";
             return SqlHelper.ExecuteNonQuery(sql,CommandType.Text,new SqlParameter("@MemberID", SqlDbType.Int) { Value=memberID});
         }
         #endregion

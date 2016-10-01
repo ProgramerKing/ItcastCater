@@ -58,6 +58,18 @@
     <Compile Include="FrmCategory.designer.cs">
       <DependentUpon>FrmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChangeCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeCategory.designer.cs">
+      <DependentUpon>FrmChangeCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeProduct.designer.cs">
+      <DependentUpon>FrmChangeProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,10 +88,23 @@
     <Compile Include="FrmMemmberInfo.designer.cs">
       <DependentUpon>FrmMemmberInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateMemmberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateMemmberInfo.designer.cs">
+      <DependentUpon>FrmUpdateMemmberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCategory.resx">
       <DependentUpon>FrmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeCategory.resx">
+      <DependentUpon>FrmChangeCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeProduct.resx">
+      <DependentUpon>FrmChangeProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -89,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMemmberInfo.resx">
       <DependentUpon>FrmMemmberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateMemmberInfo.resx">
+      <DependentUpon>FrmUpdateMemmberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

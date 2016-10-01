@@ -44,37 +44,29 @@ namespace ItcastCaterApp
         //修改会员
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
-            //if (dgvMemmber.SelectedRows.Count > 0)//有选中的行
-            //{
-            //    //获取选中行的id
-            //    //根据id去数据库查询
-            //    int id = Convert.ToInt32(dgvMemmber.SelectedRows[0].Cells[0].Value.ToString());
-            //    //去数据库查询数据
-            //    MemmberInfoBLL bll = new MemmberInfoBLL();
-            //    mea.Obj = bll.GetMemmberInfoBymemmberId(id);//对象拿到了
-
-            //    ShowFrmUpdateMemmberInfo(2);
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("请看准目标再下手");
-            //}
-
+            if(dgvMemmber.SelectedRows.Count>0) //判断是否有选中行
+            {
+                //获取选中行的ID
+                //根据ID去数据库查询
+                int memberID = Convert.ToInt32(dgvMemmber.SelectedRows[0]);
+                //去数据库查询
+                mea.Obj = memBll.GetMemberInfoByMemberID(memberID);
+                ShowFrmUpdateMemmberInfo(2);
+            }
         }
-        //MyEventArgs mea = new MyEventArgs();//用来传值的
+        MyEventArgs mea = new MyEventArgs();//用来传值的
         public void ShowFrmUpdateMemmberInfo(int p)
         {
-            //FrmUpdateMemmberInfo fum = new FrmUpdateMemmberInfo();
-            //this.evtMemmber += new EventHandler(fum.SetText);
-            //mea.Temp = p;
-            //if (this.evtMemmber!=null)
-            //{
-            //    this.evtMemmber(this, mea);
-            //    fum.FormClosed += new FormClosedEventHandler(fum_FormClosed);//关闭刷新
-            //    fum.ShowDialog();
-            //}
-           
+            FrmUpdateMemmberInfo fum = new FrmUpdateMemmberInfo();
+            this.evtMemmber += new EventHandler(fum.SetText);
+            mea.Temp = p;
+            if (this.evtMemmber != null)
+            {
+                this.evtMemmber(this, mea);
+                fum.FormClosed += new FormClosedEventHandler(fum_FormClosed);//关闭刷新
+                fum.ShowDialog();
+            }
+
         }
 
         void fum_FormClosed(object sender, FormClosedEventArgs e)

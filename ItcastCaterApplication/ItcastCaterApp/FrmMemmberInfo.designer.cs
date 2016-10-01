@@ -199,7 +199,7 @@
             // 
             // Column11
             // 
-            this.Column11.DataPropertyName = "MemmberId";
+            this.Column11.DataPropertyName = "MemberID";
             this.Column11.HeaderText = "id";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
