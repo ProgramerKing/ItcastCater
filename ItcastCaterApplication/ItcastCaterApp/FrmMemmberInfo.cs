@@ -5,6 +5,7 @@ namespace ItcastCaterApp
 {
     public partial class FrmMemmberInfo : Form
     {
+        MemberInfoService memBll = new MemberInfoService();
         public FrmMemmberInfo()
         {
             InitializeComponent();
@@ -17,21 +18,20 @@ namespace ItcastCaterApp
         //加载所有的会员
         private void LoadMemmberInfoByDelFlag(int p)
         {
-            MemberInfoService memBll = new MemberInfoService();
+           
             dgvMemmber.AutoGenerateColumns = false;//禁止自动生成列
             dgvMemmber.DataSource = memBll.GetAllMemberInfoByDelFlag(p);
             dgvMemmber.SelectedRows[0].Selected = false;//禁止默认第一行选中
         }
-        //删除会员--假删
+        //删除会员--逻辑删除
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvMemmber.SelectedRows.Count > 0)//有选中的行
             {
-                //int id = Convert.ToInt32(dgvMemmber.SelectedRows[0].Cells[0].Value.ToString());
-                //MemmberInfoBLL bll = new MemmberInfoBLL();//该行代码可以写到外面
-                //string msg = bll.DeleteMemmberInfoByMemmberId(id) ? "操作成功" : "操作失败";
-                //MessageBox.Show(msg);
-                //LoadMemmberInfoByDelFlag(0);//刷新
+                int memberID = Convert.ToInt32(dgvMemmber.SelectedRows[0].Cells[0].Value.ToString());
+                string msg = memBll.DelteMemberInfoByMemberID(memberID) ? "操作成功" : "操作失败";
+                MessageBox.Show(msg);
+                LoadMemmberInfoByDelFlag(0);//刷新
             }
         }
         public event EventHandler evtMemmber;

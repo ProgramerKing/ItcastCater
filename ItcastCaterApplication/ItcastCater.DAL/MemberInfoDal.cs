@@ -23,8 +23,7 @@ namespace ItcastCater.DAL
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MemberInfo mem = RowToMemberInfo(dr);
-                    list.Add(mem);
+                    list.Add(RowToMemberInfo(dr));
                 }
             }
             return list;
@@ -49,7 +48,21 @@ namespace ItcastCater.DAL
             mem.MemEndServerTime = (DateTime)(dr["MemEndServerTime"]);
             mem.MemBirthday = (DateTime)(dr["MemBirthday"]);
             return mem;
-        } 
+        }
+        #endregion
+
+        #region 删除会员--逻辑删除
+        /// <summary>
+        /// 删除会员-逻辑删除
+        /// 根据ID修改删除标识
+        /// </summary>
+        /// <param name="memberID">会员ID</param>
+        /// <returns>受影响的行数</returns>
+        public int DeleteMemberInfoByMemberID(int memberID)
+        {
+            string sql = "UPDATE MemberInfo DelFlag=1 WHERE MemberID=@MemberID";
+            return SqlHelper.ExecuteNonQuery(sql,CommandType.Text,new SqlParameter("@MemberID", SqlDbType.Int) { Value=memberID});
+        }
         #endregion
     }
 }
