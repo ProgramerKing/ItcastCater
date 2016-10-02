@@ -45,6 +45,7 @@
     <Compile Include="MemberInfoService.cs" />
     <Compile Include="MemberTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomInfoService.cs" />
     <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>

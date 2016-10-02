@@ -12,6 +12,7 @@ namespace ItcastCater.Models
         private int _DeskID;
         private int _RoomID;
         private string _DeskName;
+        private string _DeskRemark;
         private string _DeskRegion;
         private int? _DeskState;
         private int? _DelFlag;
@@ -152,7 +153,20 @@ namespace ItcastCater.Models
             {
                 _SubBy = value;
             }
-        } 
+        }
+
+        public string DeskRemark
+        {
+            get
+            {
+                return _DeskRemark;
+            }
+
+            set
+            {
+                _DeskRemark = value;
+            }
+        }
         #endregion
     }
 }

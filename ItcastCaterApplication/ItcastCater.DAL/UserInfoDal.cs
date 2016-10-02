@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using ItcastCater.Models;
+using System.Text;
 
 namespace ItcastCater.DAL
 {
@@ -18,13 +19,14 @@ namespace ItcastCater.DAL
         /// <returns></returns>
         public int IsLoginByLoginName(string LoginUserName, string UserPwd)
         {
-            string sql = "SELECT COUNT(*) FROM UserInfo AS u WHERE u.LoginUserName=@LoginUserName AND u.UserPwd=@UserPwd";
+            StringBuilder sql = new StringBuilder();
+            sql.Append("SELECT COUNT(*) FROM UserInfo AS u WHERE u.LoginUserName=@LoginUserName AND u.UserPwd=@UserPwd");
             SqlParameter[] pms = new SqlParameter[]
             {
                 new SqlParameter("@UserName",SqlDbType.NVarChar,16) {Value=LoginUserName },
                 new SqlParameter("@UserPwd",SqlDbType.VarChar,200) {Value=UserPwd }
             };
-            return (int)SqlHelper.ExecuteScalar(sql, CommandType.Text, pms);
+            return (int)SqlHelper.ExecuteScalar(sql.ToString(), CommandType.Text, pms);
         }
         #endregion
 
@@ -37,9 +39,10 @@ namespace ItcastCater.DAL
         public UserInfo GetUserInfoByUserID(string LoginUserName)
         {
             UserInfo model = null;
-            string sql = "SELECT u.UserID,u.LoginUserName,u.UserPwd,u.DelFlag FROM UserInfo AS u WHERE u.LoginUserName=@LoginUserName";
+            StringBuilder sql = new StringBuilder();
+            sql.Append("SELECT u.UserID,u.LoginUserName,u.UserPwd,u.DelFlag FROM UserInfo AS u WHERE u.LoginUserName=@LoginUserName");
             #region 写法一
-            //using (SqlDataReader reader = SqlHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@LoginUserName", SqlDbType.NVarChar) { Value = LoginUserName }))
+            //using (SqlDataReader reader = SqlHelper.ExecuteReader(sql.ToString(), CommandType.Text, new SqlParameter("@LoginUserName", SqlDbType.NVarChar) { Value = LoginUserName }))
             //{
             //    if (reader.HasRows)
             //    {
@@ -55,7 +58,7 @@ namespace ItcastCater.DAL
             #endregion
 
             #region 写法二
-            DataTable dt = SqlHelper.ExecuteTable(sql, CommandType.Text, new SqlParameter("@LoginUserName", SqlDbType.VarChar, 32) { Value = LoginUserName });
+            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text, new SqlParameter("@LoginUserName", SqlDbType.VarChar, 32) { Value = LoginUserName });
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow dr in dt.Rows)

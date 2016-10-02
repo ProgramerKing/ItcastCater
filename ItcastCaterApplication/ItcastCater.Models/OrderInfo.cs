@@ -18,6 +18,7 @@ namespace ItcastCater.Models
         private DateTime? _EndTime;
         private decimal? _OrderMoney;
         private decimal? _Discount;
+        private int? _DelFlag;
         /// <summary>
         /// 订单主键
         /// </summary>
@@ -166,6 +167,21 @@ namespace ItcastCater.Models
             set
             {
                 _Discount = value;
+            }
+        }
+        /// <summary>
+        /// 删除标识
+        /// </summary>
+        public int? DelFlag
+        {
+            get
+            {
+                return _DelFlag;
+            }
+
+            set
+            {
+                _DelFlag = value;
             }
         }
         #endregion
