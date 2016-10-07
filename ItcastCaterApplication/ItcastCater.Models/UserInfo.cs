@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/// <summary>
+/// Model
+/// </summary>
 namespace ItcastCater.Models
 {
+    using System;
+
+    /// <summary>
+    /// 用户信息类
+    /// </summary>
     public class UserInfo
     {
         private int _UserID;

@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using ItcastCater.Models;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class MemberTypeDal
+    #region reference namespace
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Models; 
+    #endregion
+    
+    /// <summary>
+    /// DAL MemberTypeDAL
+    /// </summary>
+    public class MemberTypeDAL
     {
-        #region 根据删除标识查询所有会员类别
+        #region 根据删除标识获取会员类别列表
         /// <summary>
-        /// 根据删除标识查询所有会员类别
+        /// 根据删除标识获取会员类别列表
         /// </summary>
         /// <param name="delFlag">删除标识 0:未删除，1：已删除（逻辑删除）</param>
         /// <returns>list</returns>

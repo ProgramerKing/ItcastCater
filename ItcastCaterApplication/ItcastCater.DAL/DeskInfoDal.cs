@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ItcastCater.Models;
-using System.Data;
-using System.Data.SqlClient;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class DeskInfoDal
+    #region reference namespace
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using Models;
+    using System.Data;
+    using System.Data.SqlClient; 
+    #endregion
+
+    /// <summary>
+    /// DAL DeskInfoDAL
+    /// </summary>
+    public class DeskInfoDAL
     {
         #region 更改餐桌状态
         /// <summary>

@@ -1,11 +1,15 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
+    #region reference namespace
+    using System;
+    using System.Data;
+    using System.Data.SqlClient; 
+    #endregion
     /// <summary>
-    /// SQL帮助类
+    /// SQL Helper
     /// </summary>
     public class SqlHelper
     {

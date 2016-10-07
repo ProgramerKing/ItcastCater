@@ -1,7 +1,9 @@
-﻿using System;
-
+﻿/// <summary>
+/// Model
+/// </summary>
 namespace ItcastCater.Models
 {
+    using System;
     /// <summary>
     /// 餐桌信息类
     /// </summary>

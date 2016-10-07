@@ -1,5 +1,11 @@
-﻿namespace ItcastCater.Models
+﻿/// <summary>
+/// Model
+/// </summary>
+namespace ItcastCater.Models
 {
+    /// <summary>
+    /// 订单表与产品表的中间表
+    /// </summary>
     public class R_OrderInfo_Product
     {
         private string _ProName;

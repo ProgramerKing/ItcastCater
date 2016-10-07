@@ -1,11 +1,13 @@
-﻿using ItcastCater.DAL;
-using ItcastCater.Models;
-
+﻿/// <summary>
+/// BLL
+/// </summary>
 namespace ItcastCater.BLL
 {
+    using DAL;
+    using Models;
     public class UserInfoService
     {
-        UserInfoDal dalUser = new UserInfoDal();
+        UserInfoDAL dalUser = new UserInfoDAL();
         #region 用户登录 一
         public bool UserLogin(string LoginUserName, string UserPwd)
         {

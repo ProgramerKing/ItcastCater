@@ -1,16 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Data;
-using System.Data.SqlClient;
-using ItcastCater.Models;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class ProductInfoDal
+    #region reference namespace
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Models;
+    using System.Text; 
+    #endregion
+
+    /// <summary>
+    /// DAL ProductInfoDAL
+    /// </summary>
+    public class ProductInfoDAL
     {
+        #region 根据拼音或者编号查询产品
         /// <summary>
         /// 根据拼音或者编号查询产品
         /// </summary>
@@ -30,7 +37,7 @@ namespace ItcastCater.DAL
                 sql.Append(" AND ProNum LIKE @ProSpell");
             }
             List<ProductInfo> list = new List<ProductInfo>();
-            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text,new SqlParameter("@ProSpell", SqlDbType.VarChar, 64) { Value="%"+num+"%"});
+            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text, new SqlParameter("@ProSpell", SqlDbType.VarChar, 64) { Value = "%" + num + "%" });
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow dr in dt.Rows)
@@ -39,30 +46,35 @@ namespace ItcastCater.DAL
                 }
             }
             return list;
-        }
+        } 
+        #endregion
 
+        #region 根据商品类别的ID查询该类别下有没有产品
         /// <summary>
-        /// 根据商品类别的id查询该类别下有没有产品
+        /// 根据商品类别的ID查询该类别下有没有产品
         /// </summary>
         /// <param name="CatID"></param>
         /// <returns></returns>
         public object GetProductInfoCountByCatID(int CatID)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append( "SELECT COUNT(*) FROM ProductInfo WHERE DelFlag=0 AND CatID=@CatID");
-            return SqlHelper.ExecuteScalar(sql.ToString(),CommandType.Text,new SqlParameter("@CatID", SqlDbType.Int) { Value=CatID});
-        }
+            sql.Append("SELECT COUNT(*) FROM ProductInfo WHERE DelFlag=0 AND CatID=@CatID");
+            return SqlHelper.ExecuteScalar(sql.ToString(), CommandType.Text, new SqlParameter("@CatID", SqlDbType.Int) { Value = CatID });
+        } 
+        #endregion
+
+        #region 根据编号查找产品
         /// <summary>
         /// 根据编号查找产品
         /// </summary>
-        /// <param name="proNum"></param>
-        /// <returns></returns>
+        /// <param name="proNum">产品编号</param>
+        /// <returns>list</returns>
         public List<ProductInfo> GetProductInfoByProNum(string proNum)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append( "SELECT * FROM ProductInfo WHERE DelFlag=0 AND ProNum LIKE @ProNum");
+            sql.Append("SELECT * FROM ProductInfo WHERE DelFlag=0 AND ProNum LIKE @ProNum");
             List<ProductInfo> list = new List<ProductInfo>();
-            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text,new SqlParameter("@ProNum", SqlDbType.VarChar, 32) { Value="%"+proNum+"%"});
+            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text, new SqlParameter("@ProNum", SqlDbType.VarChar, 32) { Value = "%" + proNum + "%" });
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow dr in dt.Rows)
@@ -72,19 +84,21 @@ namespace ItcastCater.DAL
             }
             return list;
 
-        }
+        } 
+        #endregion
 
+        #region 根据的是商品类别的ID查询该类别下所有的产品
         /// <summary>
-        /// 根据的是商品类别的id查询该类别下所有的产品
+        /// 根据的是商品类别的ID查询该类别下所有的产品
         /// </summary>
-        /// <param name="catID">类别的id</param>
+        /// <param name="catID">类别的ID</param>
         /// <returns></returns>
         public List<ProductInfo> GetProductInfoByCatID(int catID)
         {
             StringBuilder sql = new StringBuilder();
-           sql.Append( "SELECT * FROM ProductInfo WHERE DelFlag=0 AND CatID=@CatID");
+            sql.Append("SELECT * FROM ProductInfo WHERE DelFlag=0 AND CatID=@CatID");
             List<ProductInfo> list = new List<ProductInfo>();
-            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(),CommandType.Text,new SqlParameter("@CatID", SqlDbType.Int) { Value=catID});
+            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text, new SqlParameter("@CatID", SqlDbType.Int) { Value = catID });
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow dr in dt.Rows)
@@ -93,33 +107,78 @@ namespace ItcastCater.DAL
                 }
             }
             return list;
-        }
+        } 
+        #endregion
 
-
-
-        //新增
-        //public int AddProductInfo(ProductInfo pro)
-        //{
-        //    string sql = "insert into ProductInfo(CatID,ProName,ProCost,ProSpell,ProPrice,ProUnit,Remark,DelFlag,SubTime,ProStock,ProNum,SubBy) values(@CatID,@ProName,@ProCost,@ProSpell,@ProPrice,@ProUnit,@Remark,@DelFlag,@SubTime,@ProStock,@ProNum,@SubBy)";
-        //    return AddANDUpdate(pro, sql, 3);
-        //}
-        //修改
-        //public int UpdateProductInfo(ProductInfo pro)
-        //{
-        //    string sql = "update ProductInfo set CatID=@CatID,ProName=@ProName,ProCost=@ProCost,ProSpell=@ProSpell,ProPrice=@ProPrice,ProUnit=@ProUnit,Remark=@Remark,ProStock=@ProStock,ProNum=@ProNum WHERE ProID=@ProID";
-        //    return AddANDUpdate(pro, sql, 4);
-        //}
-
+        #region 新增产品
         /// <summary>
-        /// 根据id查询对象
+        /// 新增产品
         /// </summary>
-        /// <param name="ProID"></param>
-        /// <returns></returns>
-        public ProductInfo GetProductInfoById(int ProID)
+        /// <param name="pro">ProductInfo实体</param>
+        /// <returns>受影响的行数</returns>
+        public int AddProductInfo(ProductInfo pro)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append( "SELECT * FROM ProductInfo WHERE DelFlag=0 AND ProID=@ProID");
-            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(),CommandType.Text,new SqlParameter("@ProID", SqlDbType.Int) { Value = ProID });
+            sql.Append("INSERT INTO ProductInfo(CatID,ProName,ProCost,ProSpell,ProPrice,ProUnit,Remark,DelFlag,SubTime,ProStock,ProNum,SubBy) values(@CatID,@ProName,@ProCost,@ProSpell,@ProPrice,@ProUnit,@Remark,@DelFlag,@SubTime,@ProStock,@ProNum,@SubBy)");
+            SqlParameter[] pms = new SqlParameter[]
+            {
+                new SqlParameter("@CatID",SqlDbType.Int) {Value=pro.CatID },
+                new SqlParameter("@ProName",SqlDbType.VarChar,32) {Value=pro.ProName },
+                new SqlParameter("@ProCost",SqlDbType.Decimal,18) {Value=pro.ProCost },
+                new SqlParameter("@ProSpell",SqlDbType.VarChar,64) {Value=pro.ProSpell },
+                new SqlParameter("@ProPrice",SqlDbType.Decimal,18) {Value=pro.ProPrice },
+                new SqlParameter("@ProUnit",SqlDbType.VarChar,16) {Value=pro.ProUnit },
+                new SqlParameter("@Remark",SqlDbType.VarChar,64) {Value=pro.Remark },
+                new SqlParameter("@DelFlag",SqlDbType.SmallInt) {Value=pro.DelFlag },
+                new SqlParameter("@SubTime",SqlDbType.Date) {Value= pro.SubTime},
+                new SqlParameter("@ProStock",SqlDbType.Decimal,18) {Value=pro.ProStock },
+                new SqlParameter("@ProNum",SqlDbType.VarChar,32) {Value=pro.ProNum },
+                new SqlParameter("@SubBy",SqlDbType.Int) {Value=pro.SubBy }
+            };
+            return SqlHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, pms);
+        } 
+        #endregion
+
+        #region 修改产品信息
+        /// <summary>
+        /// 修改产品信息
+        /// </summary>
+        /// <param name="pro">ProductInfo实体</param>
+        /// <returns>受影响的行数</returns>
+        public int UpdateProductInfo(ProductInfo pro)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.Append("UPDATE ProductInfo SET CatID=@CatID,ProName=@ProName,ProCost=@ProCost,ProSpell=@ProSpell,ProPrice=@ProPrice,ProUnit=@ProUnit,Remark=@Remark,ProStock=@ProStock,ProNum=@ProNum WHERE ProID=@ProID");
+            SqlParameter[] pms = new SqlParameter[]
+            {
+                new SqlParameter("@CatID",SqlDbType.Int) {Value=pro.CatID },
+                new SqlParameter("@ProName",SqlDbType.VarChar,32) {Value=pro.ProName },
+                new SqlParameter("@ProCost",SqlDbType.Decimal,18) {Value=pro.ProCost },
+                new SqlParameter("@ProSpell",SqlDbType.VarChar,64) {Value=pro.ProSpell },
+                new SqlParameter("@ProPrice",SqlDbType.Decimal,18) {Value=pro.ProPrice },
+                new SqlParameter("@ProUnit",SqlDbType.VarChar,16) {Value=pro.ProUnit },
+                new SqlParameter("@Remark",SqlDbType.VarChar,64) {Value=pro.Remark },
+                new SqlParameter("@SubTime",SqlDbType.Date) {Value= pro.SubTime},
+                new SqlParameter("@ProStock",SqlDbType.Decimal,18) {Value=pro.ProStock },
+                new SqlParameter("@ProNum",SqlDbType.VarChar,32) {Value=pro.ProNum },
+                new SqlParameter("@ProID",SqlDbType.Int) {Value=pro.ProID }
+            };
+            return SqlHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, pms);
+
+        }
+        #endregion
+
+        #region 根据ID查询对象
+        /// <summary>
+        /// 根据ID查询对象
+        /// </summary>
+        /// <param name="proID">产品ID</param>
+        /// <returns>实体对象</returns>
+        public ProductInfo GetProductInfoByProID(int proID)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.Append("SELECT * FROM ProductInfo WHERE DelFlag=0 AND ProID=@ProID");
+            DataTable dt = SqlHelper.ExecuteTable(sql.ToString(), CommandType.Text, new SqlParameter("@ProID", SqlDbType.Int) { Value = proID });
             ProductInfo pro = null;
             if (dt.Rows.Count > 0)
             {
@@ -127,18 +186,21 @@ namespace ItcastCater.DAL
             }
             return pro;
         }
+        #endregion
+
+        #region 根据ID删除产品
         /// <summary>
-        /// 删除产品
+        /// 根据ID删除产品
         /// </summary>
-        /// <param name="ProID">id</param>
+        /// <param name="proID">产品ID</param>
         /// <returns></returns>
-        public int DeleteProductInfoByProID(int ProID)
+        public int DeleteProductInfoByProID(int proID)
         {
             StringBuilder sql = new StringBuilder();
             sql.Append("UPDATE ProductInfo SET DelFlag=1 WHERE ProID=@ProID");
-            return SqlHelper.ExecuteNonQuery(sql.ToString(),CommandType.Text,new SqlParameter("@ProID", SqlDbType.Int) { Value = ProID });
-        }
-
+            return SqlHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, new SqlParameter("@ProID", SqlDbType.Int) { Value = proID });
+        } 
+        #endregion
 
         #region 根据删除标识查询所有产品
         /// <summary>

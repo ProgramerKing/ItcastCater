@@ -1,7 +1,9 @@
-﻿using System;
-
+﻿/// <summary>
+/// Model
+/// </summary>
 namespace ItcastCater.Models
 {
+    using System;
     /// <summary>
     /// 会员信息类
     /// </summary>

@@ -1,17 +1,25 @@
-﻿using ItcastCater.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Text;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class RoomInfoDal
+    #region reference namespace
+    using Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Text; 
+    #endregion
+
+    /// <summary>
+    /// DAL RoomInfoDAL
+    /// </summary>
+    public class RoomInfoDAL
     {
-        #region 根据删除标识查询所有房间信息
+        #region 根据删除标识获取房间列表
         /// <summary>
-        /// 根据删除标识查询所有房间信息
+        /// 根据删除标识获取房间列表
         /// </summary>
         /// <param name="delFlag">删除标识 0:未删除，1：已删除（逻辑删除）</param>
         /// <returns>list</returns>

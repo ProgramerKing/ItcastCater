@@ -41,11 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryInfoService.cs" />
+    <Compile Include="DeskInfoService.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="MemberInfoService.cs" />
     <Compile Include="MemberTypeService.cs" />
+    <Compile Include="OrderInfoService.cs" />
+    <Compile Include="ProductInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomInfoService.cs" />
+    <Compile Include="R_Order_DeskService.cs" />
     <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>

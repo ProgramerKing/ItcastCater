@@ -1,7 +1,10 @@
-﻿namespace ItcastCater.Models
+﻿/// <summary>
+/// Model
+/// </summary>
+namespace ItcastCater.Models
 {
     /// <summary>
-    /// 会员类型
+    /// 会员类型类
     /// </summary>
     public class MemberType
     {

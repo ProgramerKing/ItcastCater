@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using System.Data.SqlClient;
-using ItcastCater.Models;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class CategoryInfoDal
+    #region reference namespace
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Models; 
+    #endregion
+
+    /// <summary>
+    /// DAL CategoryInfoDAL
+    /// </summary>
+    public class CategoryInfoDAL
     {
         #region 新增商品类别
         /// <summary>
@@ -73,7 +81,7 @@ namespace ItcastCater.DAL
         /// </summary>
         /// <param name="catID">类别ID</param>
         /// <returns>model</returns>
-        public CategoryInfo GetCategoryInfoByCatID(int catID)
+        public CategoryInfo GetCategoryInfoByID(int catID)
         {
             StringBuilder sql = new StringBuilder();
             sql.Append( "SELECT * FROM CategoryInfo WHERE CatID=@CatID");
@@ -87,9 +95,9 @@ namespace ItcastCater.DAL
         }
         #endregion
 
-        #region 根据商品分类删除标识获取所有商品分类
+        #region 根据删除标识获取商品分类列表
         /// <summary>
-        /// 根据商品分类删除标识获取所有商品分类
+        /// 根据删除标识获取商品分类列表
         /// </summary>
         /// <param name="delFlag">删除标识 0:未删除，1：已删除（逻辑删除）</param>
         /// <returns>list</returns>

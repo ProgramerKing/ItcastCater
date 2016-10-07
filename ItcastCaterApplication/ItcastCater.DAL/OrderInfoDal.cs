@@ -1,15 +1,19 @@
-﻿using ItcastCater.Models;
-using System.Data;
-using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class OrderInfoDal
+    #region reference namespace
+    using Models;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Text; 
+    #endregion
+
+    /// <summary>
+    /// DAL OrderInfoDAL
+    /// </summary>
+    public class OrderInfoDAL
     {
         #region 更新订单
         /// <summary>

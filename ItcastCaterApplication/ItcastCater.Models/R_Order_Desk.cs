@@ -1,5 +1,11 @@
-﻿namespace ItcastCater.Models
+﻿/// <summary>
+/// Model
+/// </summary>
+namespace ItcastCater.Models
 {
+    /// <summary>
+    /// 订单表与餐桌表的中间表
+    /// </summary>
     public class R_Order_Desk
     {
         private int _ROrderID;

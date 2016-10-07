@@ -1,12 +1,20 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using ItcastCater.Models;
-using System.Text;
-
+﻿/// <summary>
+/// DAL
+/// </summary>
 namespace ItcastCater.DAL
 {
-    public class UserInfoDal
+    #region reference namespace
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Models;
+    using System.Text; 
+    #endregion
+
+    /// <summary>
+    /// DAL UserInfoDAL
+    /// </summary>
+    public class UserInfoDAL
     {
         //检查登录是否成功
 

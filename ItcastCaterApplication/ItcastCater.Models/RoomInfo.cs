@@ -1,7 +1,13 @@
-﻿using System;
-
+﻿/// <summary>
+/// Model
+/// </summary>
 namespace ItcastCater.Models
 {
+    using System;
+
+    /// <summary>
+    /// 房间信息类
+    /// </summary>
     public class RoomInfo
     {
         private int _RoomID;
